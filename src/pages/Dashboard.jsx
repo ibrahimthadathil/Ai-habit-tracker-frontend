@@ -61,8 +61,8 @@ export default function Dashboard() {
       const allRange = await api.get("/logs/range", {
         params: { start: s90, end: e90 },
       });
-      for (const h of habitsRes.data) byId[h._id] = [];
-      for (const l of allRange.data) {
+      for (const h of habitsRes.data.habits) byId[h._id] = [];
+      for (const l of allRange.data.logs) {
         if (!byId[l.habitId]) byId[l.habitId] = [];
         byId[l.habitId].push(l.completedDate);
       }
@@ -152,8 +152,8 @@ export default function Dashboard() {
         return next;
       });
     } else {
-      const res = await api.post("/logs", { habitId: habit._id, date: today });
-      setTodayLogs((logs) => [...logs, res.data]);
+      const res = await api.post("/logs", { habitId: habit._id, date: today });      
+      setTodayLogs((logs) => [...logs, res.data.log]);
       setAllLogsByHabit((prev) => {
         const next = { ...prev };
         next[habit._id] = [today, ...(next[habit._id] || [])];

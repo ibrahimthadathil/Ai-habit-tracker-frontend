@@ -36,11 +36,11 @@ export default function Sidebar() {
   const save = async () => {
     setSaving(true);
     try {
-      const res = await api.put("/auth/profile", {
+      const res = await api.put("/user/profile", {
         name,
         morningMotivation: morning,
-      });
-      updateUser(res.data.user);
+      });      
+      updateUser(res.data.updatedUser);
       setSettingsOpen(false);
     } finally {
       setSaving(false);
