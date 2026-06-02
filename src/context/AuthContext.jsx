@@ -14,12 +14,13 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+
     if (!token) {
       setLoading(false);
       return;
     }
     api
-      .get("/auth/me")
+      .get("/auth/current-user")
       .then((res) => {
         setUser(res.data.user);
         localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -33,7 +34,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const res = await api.post("/auth/login", { email, password });
+    const res = await api.post("/auth/signin", { email, password });
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
     setUser(res.data.user);
@@ -41,7 +42,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, password) => {
-    const res = await api.post("/auth/register", { name, email, password });
+    const res = await api.post("/auth/signup", { name, email, password });
+
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
     setUser(res.data.user);

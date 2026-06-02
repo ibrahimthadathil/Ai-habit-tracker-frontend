@@ -47,11 +47,11 @@ export default function Dashboard() {
         api.get("/logs/range", { params: { start, end } }),
         api.get("/logs/heatmap"),
       ]);
-
-      setHabits(habitsRes.data);
-      setTodayLogs(todayRes.data);
-      setWeekLogs(rangeRes.data);
-      setHeatmap(heatRes.data);
+            
+      setHabits(habitsRes.data.habits);
+      setTodayLogs(todayRes.data.logs);
+      setWeekLogs(rangeRes.data.logs);
+      setHeatmap(heatRes.data.logs);
 
       const byId = {};
       const start90 = new Date();
@@ -178,8 +178,10 @@ export default function Dashboard() {
         setHabits((hs) => hs.map((h) => (h._id === res.data._id ? res.data : h)));
       } else {
         const res = await api.post("/habits", data);
-        setHabits((hs) => [...hs, res.data]);
-        setAllLogsByHabit((p) => ({ ...p, [res.data._id]: [] }));
+        console.log(res.data);
+        
+        setHabits((hs) => [...hs, res.data.habit]);
+        setAllLogsByHabit((p) => ({ ...p, [res.data.habit._id]: [] }));
       }
       setFormOpen(false);
       setEditing(null);
@@ -321,7 +323,9 @@ export default function Dashboard() {
           </div>
         ) : (
           <div className="space-y-2">
-            {habits.map((h) => (
+          
+            {habits.map((h) => 
+            (
               <TodayHabitCard
                 key={h._id}
                 habit={h}
