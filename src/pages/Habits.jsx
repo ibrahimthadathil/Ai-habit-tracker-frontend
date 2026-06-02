@@ -46,10 +46,11 @@ export default function Habits() {
           },
         }),
       ]);
-      setHabits(habitsRes.data);
+
+      setHabits(habitsRes.data.habits);
       const byId = {};
-      for (const h of habitsRes.data) byId[h._id] = [];
-      for (const l of rangeRes.data) {
+      for (const h of habitsRes.data.habits) byId[h._id] = [];
+      for (const l of rangeRes.data.logs) {
         if (!byId[l.habitId]) byId[l.habitId] = [];
         byId[l.habitId].push(l.completedDate);
       }
@@ -83,11 +84,13 @@ export default function Habits() {
     try {
       if (editing) {
         const res = await api.put(`/habits/${editing._id}`, data);
-        setHabits((hs) => hs.map((h) => (h._id === res.data._id ? res.data : h)));
+        setHabits((hs) =>
+          hs.map((h) => (h._id === res.data._id ? res.data : h)),
+        );
       } else {
         const res = await api.post("/habits", data);
-        setHabits((hs) => [...hs, res.data]);
-        setLogsByHabit((p) => ({ ...p, [res.data._id]: [] }));
+        setHabits((hs) => [...hs, res.data.habit]);
+        setLogsByHabit((p) => ({ ...p, [res.data.habit._id]: [] }));
       }
       setFormOpen(false);
       setEditing(null);
@@ -98,7 +101,12 @@ export default function Habits() {
 
   const archive = async (habit) => {
     const res = await api.put(`/habits/${habit._id}/archive`);
-    setHabits((hs) => hs.map((h) => (h._id === res.data._id ? res.data : h)));
+
+    setHabits((hs) =>
+      hs.map((h) =>
+        h._id === res.data.updatedHabit._id ? res.data.updatedHabit : h,
+      ),
+    );
   };
 
   const remove = async (habit) => {
@@ -210,15 +218,15 @@ export default function Habits() {
             {showArchived
               ? "Nothing archived"
               : habits.length === 0
-              ? "No habits yet"
-              : "No habits match your filter"}
+                ? "No habits yet"
+                : "No habits match your filter"}
           </div>
           <div className="text-sm text-muted mt-1">
             {showArchived
               ? "Archived habits keep their history but stay out of your daily list."
               : habits.length === 0
-              ? "Start small — something you can do in under 5 minutes."
-              : "Try clearing your search or category filter."}
+                ? "Start small — something you can do in under 5 minutes."
+                : "Try clearing your search or category filter."}
           </div>
           {!showArchived && habits.length === 0 && (
             <button

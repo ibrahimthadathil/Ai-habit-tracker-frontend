@@ -23,8 +23,8 @@ export default function Stats() {
           api.get("/logs/stats"),
           api.get("/habits"),
         ]);
-        setStats(statsRes.data);
-        setHabits(habitsRes.data);
+        setStats(statsRes.data.data);
+        setHabits(habitsRes.data.habits);
         const end = new Date();
         const start = subDays(end, 29);
         const rangeRes = await api.get("/logs/range", {
@@ -33,7 +33,7 @@ export default function Stats() {
             end: format(end, "yyyy-MM-dd"),
           },
         });
-        setLogs(rangeRes.data);
+        setLogs(rangeRes.data.logs);
       } finally {
         setLoading(false);
       }

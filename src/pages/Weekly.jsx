@@ -25,8 +25,8 @@ export default function Weekly() {
           api.get("/habits"),
           api.get("/logs/range", { params: { start, end } }),
         ]);
-        setHabits(habitsRes.data);
-        setLogs(rangeRes.data);
+        setHabits(habitsRes.data.habits);
+        setLogs(rangeRes.data.logs);
       } finally {
         setLoading(false);
       }

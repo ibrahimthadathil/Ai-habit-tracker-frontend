@@ -83,8 +83,8 @@ export default function Insights() {
           api.get("/habits"),
           api.get("/logs/range", { params: { start, end } }),
         ]);
-        setHabits(habitsRes.data);
-        setLogs(logsRes.data);
+        setHabits(habitsRes.data.habits);
+        setLogs(logsRes.data.logs);
 
         // try to load cached report for this week
         const cached = localStorage.getItem(REPORT_CACHE_KEY(thisWeek[0].key));
