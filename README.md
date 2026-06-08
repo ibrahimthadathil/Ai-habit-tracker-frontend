@@ -78,6 +78,37 @@ The application provides:
 
 ---
 
+## Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- Axios
+- React Router
+
+### Charts & Visualization
+- Recharts
+
+### Authentication
+- JWT Authentication
+
+### AI Integration
+-  Gemini API
+
+## Architecture
+
+Frontend (React)
+      ↓
+Axios API Layer
+      ↓
+Node.js Backend
+      ↓
+MongoDB Database
+      ↓
+AI Service
+
+
 ##  Project Structure
 
 ```sh
@@ -104,244 +135,6 @@ The application provides:
     └── vite.config.js
 ```
 
-
-###  Project Index
-<details open>
-	<summary><b><code>AI-HABIT-TRACKER-FRONTEND/</code></b></summary>
-	<details> <!-- __root__ Submodule -->
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/package-lock.json'>package-lock.json</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/vite.config.js'>vite.config.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/eslint.config.js'>eslint.config.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/index.html'>index.html</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/package.json'>package.json</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/postcss.config.js'>postcss.config.js</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-		</blockquote>
-	</details>
-	<details> <!-- src Submodule -->
-		<summary><b>src</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/index.css'>index.css</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/App.jsx'>App.jsx</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/main.jsx'>main.jsx</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-			<details>
-				<summary><b>utils</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/utils/confetti.js'>confetti.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/utils/dateHelpers.js'>dateHelpers.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/utils/constants.js'>constants.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-			<details>
-				<summary><b>components</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/HabitStatsCard.jsx'>HabitStatsCard.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/ProtectedRoute.jsx'>ProtectedRoute.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/HabitForm.jsx'>HabitForm.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/MorningMotivation.jsx'>MorningMotivation.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/Modal.jsx'>Modal.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/WeeklyBarChart.jsx'>WeeklyBarChart.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/AppLayout.jsx'>AppLayout.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/MonthlyBarChart.jsx'>MonthlyBarChart.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/WeeklyGrid.jsx'>WeeklyGrid.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/Markdown.jsx'>Markdown.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/StreakRecoveryCard.jsx'>StreakRecoveryCard.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/OrbitingHabits.jsx'>OrbitingHabits.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/ProgressRing.jsx'>ProgressRing.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/Sidebar.jsx'>Sidebar.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/CategoryPieChart.jsx'>CategoryPieChart.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/AIChat.jsx'>AIChat.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/LoadingSpinner.jsx'>LoadingSpinner.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/MobileNav.jsx'>MobileNav.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/HabitSuggestionModal.jsx'>HabitSuggestionModal.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/TodayHabitCard.jsx'>TodayHabitCard.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/HeatmapChart.jsx'>HeatmapChart.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/SummaryCards.jsx'>SummaryCards.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/components/AIWeeklyReport.jsx'>AIWeeklyReport.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-			<details>
-				<summary><b>api</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/api/axios.js'>axios.js</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-			<details>
-				<summary><b>pages</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Login.jsx'>Login.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Insights.jsx'>Insights.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Stats.jsx'>Stats.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Weekly.jsx'>Weekly.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Dashboard.jsx'>Dashboard.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Landing.jsx'>Landing.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Habits.jsx'>Habits.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/pages/Register.jsx'>Register.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-			<details>
-				<summary><b>context</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/context/ThemeContext.jsx'>ThemeContext.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend/blob/master/src/context/AuthContext.jsx'>AuthContext.jsx</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-</details>
 
 ---
 ##  Getting Started
@@ -387,10 +180,16 @@ Run Ai-habit-tracker-frontend using the following command:
 **Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
 
 ```sh
-❯ npm start
+❯ npm run dev
 ```
 
+## Environment Variables
 
+Create a `.env` file:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
 ###  Testing
 Run the test suite using the following command:
 **Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
@@ -403,10 +202,23 @@ Run the test suite using the following command:
 ---
 ##  Project Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+```md
+## Roadmap
 
+- [x] Habit Tracking
+- [x] Analytics Dashboard
+- [x] AI Weekly Reports
+- [x] Habit Suggestions
+- [x] Authentication
+```
+
+## Related Repositories
+
+Frontend:
+https://github.com/ibrahimthadathil/Ai-habit-tracker-frontend
+
+Backend:
+https://github.com/ibrahimthadathil/Ai-habit-tracker-Backend
 ---
 
 ##  Contributing
